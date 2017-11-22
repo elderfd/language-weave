@@ -42,7 +42,7 @@
         }, {
             "language": "pweave_md",
             "scopeName": "source.pweave.md",
-            "path": "./syntaxes/noweb_python.json"
+            "path": "./syntaxes/pweave_md.json"
         }, {
             "language": "pweave_rst",
             "scopeName": "source.pweave.restructuredtext",
