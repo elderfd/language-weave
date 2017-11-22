@@ -82,5 +82,9 @@
         "latex-workshop": "*",
         "language-julia": "*"
     },
-    "license": "MIT"
+    "license": "MIT",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/elderfd/language-weave"
+    }
 }
