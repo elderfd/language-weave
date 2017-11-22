@@ -3,7 +3,7 @@
     "displayName": "language-weave",
     "description": "Language support for pweave",
     "version": "0.0.1",
-    "publisher": "Verifa",
+    "publisher": "jameselderfield",
     "engines": {
         "vscode": "^1.17.0"
     },
