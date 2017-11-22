@@ -77,10 +77,10 @@
             "path": "./syntaxes/weave_tex.json"
         }]
     },
-    "dependencies": {
-        "restructuredtext": "*",
-        "latex-workshop": "*",
-        "language-julia": "*"
+    "extensionDependencies": {
+        "lextudio.restructuredtext": "*",
+        "James-Yu.latex-workshop": "*",
+        "julialang.language-julia": "*"
     },
     "license": "MIT",
     "repository": {
