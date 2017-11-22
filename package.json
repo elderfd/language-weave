@@ -16,19 +16,31 @@
                 "extensions": [".pmd", ".pmdw"],
                 "configuration": "./language-configuration.json"
             }, {
-                "id": "noweb_julia"
+                "id": "noweb_julia",
+                "configuration": "./language-configuration.json"
             }, {
-                "id": "noweb_python"
+                "id": "noweb_python",
+                "configuration": "./language-configuration.json"
             }, {
-                "id": "pweave_rst"
+                "id": "pweave_rst",
+                "configuration": "./language-configuration.json",
+                "extensions": [".prstw", ".rstw"]
             }, {
-                "id": "pweave_tex"
+                "id": "pweave_tex",
+                "configuration": "./language-configuration.json",
+                "extensions": [".ptexw", ".pnw"]
             }, {
-                "id": "weave_md"
+                "id": "weave_md",
+                "configuration": "./language-configuration.json",
+                "extensions": [".jmd", ".jmdw", ".mdw"]
             }, {
-                "id": "weave_rst"
+                "id": "weave_rst",
+                "configuration": "./language-configuration.json",
+                "extensions": [".jrstw"]
             }, {
-                "id": "weave_tex"
+                "id": "weave_tex",
+                "configuration": "./language-configuration.json",
+                "extensions": [".texw", ".jtexw", ".jnw"]
             }
         ],
         "grammars": [{
@@ -64,5 +76,11 @@
             "scopeName": "source.weave.latex",
             "path": "./syntaxes/weave_tex.json"
         }]
-    }
+    },
+    "dependencies": {
+        "restructuredtext": "*",
+        "latex-workshop": "*",
+        "language-julia": "*"
+    },
+    "license": "MIT"
 }

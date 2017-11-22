@@ -41,10 +41,7 @@
             ]
         },
         {
-            "include": "source.gfm"
-        },
-        {
-            "include": "text.md"
+            "include": "text.html.markdown"
         }
     ]
 }
