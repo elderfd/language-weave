@@ -1,0 +1,68 @@
+{
+    "name": "language-weave",
+    "displayName": "language-weave",
+    "description": "Language support for pweave",
+    "version": "0.0.1",
+    "publisher": "Verifa",
+    "engines": {
+        "vscode": "^1.17.0"
+    },
+    "categories": [
+        "Languages"
+    ],
+    "contributes": {
+        "languages": [{
+                "id": "pweave_md",
+                "extensions": [".pmd", ".pmdw"],
+                "configuration": "./language-configuration.json"
+            }, {
+                "id": "noweb_julia"
+            }, {
+                "id": "noweb_python"
+            }, {
+                "id": "pweave_rst"
+            }, {
+                "id": "pweave_tex"
+            }, {
+                "id": "weave_md"
+            }, {
+                "id": "weave_rst"
+            }, {
+                "id": "weave_tex"
+            }
+        ],
+        "grammars": [{
+            "language": "noweb_julia",
+            "scopeName": "source.weave.noweb",
+            "path": "./syntaxes/noweb_julia.json"
+        }, {
+            "language": "noweb_python",
+            "scopeName": "source.pweave.noweb",
+            "path": "./syntaxes/noweb_python.json"
+        }, {
+            "language": "pweave_md",
+            "scopeName": "source.pweave.md",
+            "path": "./syntaxes/noweb_python.json"
+        }, {
+            "language": "pweave_rst",
+            "scopeName": "source.pweave.restructuredtext",
+            "path": "./syntaxes/pweave_rst.json"
+        }, {
+            "language": "pweave_tex",
+            "scopeName": "source.pweave.latex",
+            "path": "./syntaxes/pweave_tex.json"
+        }, {
+            "language": "weave_md",
+            "scopeName": "source.weave.md",
+            "path": "./syntaxes/weave_md.json"
+        }, {
+            "language": "weave_rst",
+            "scopeName": "source.weave.restructuredtext",
+            "path": "./syntaxes/weave_rst.json"
+        }, {
+            "language": "weave_tex",
+            "scopeName": "source.weave.latex",
+            "path": "./syntaxes/weave_tex.json"
+        }]
+    }
+}

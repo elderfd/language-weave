@@ -1,0 +1,36 @@
+{
+    "scopeName": "source.pweave.noweb",
+    "patterns": [
+        {
+            "begin": "(^<<)(.*?)(>>=)\\s*$",
+            "beginCaptures": {
+                "1": {
+                    "name": "markup.heading.pweave.noweb"
+                },
+                "2": {
+                    "contentName": "source.embedded.python",
+                    "patterns": [
+                        {
+                            "include": "source.python"
+                        }
+                    ]
+                },
+                "3": {
+                    "name": "markup.heading.pweave.noweb"
+                }
+            },
+            "end": "^(@)\\s*$",
+            "endCaptures": {
+                "1": {
+                    "name": "markup.heading.pweave.noweb"
+                }
+            },
+            "contentName": "source.embedded.python",
+            "patterns": [
+                {
+                    "include": "source.python"
+                }
+            ]
+        }
+    ]
+}

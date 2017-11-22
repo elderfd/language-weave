@@ -1,0 +1,50 @@
+{
+    "name": "Pweave markdown",
+    "scopeName": "source.pweave.md",
+    "fileTypes": [
+        "pmd",
+        "pmdw"
+    ],
+    "patterns": [
+        {
+            "include": "source.pweave.noweb"
+        },
+        {
+            "begin": "^([`~]{3,})(\\{|\\{\\.|)(python)(,|)\\s*(.*?)(\\}|)\\s*$",
+            "beginCaptures": {
+                "1": {
+                    "name": "markup.heading.weave.md"
+                },
+                "3": {
+                    "name": "markup.bold.weave.md"
+                },
+                "5": {
+                    "contentName": "source.embedded.python",
+                    "patterns": [
+                        {
+                            "include": "source.python"
+                        }
+                    ]
+                }
+            },
+            "end": "^[`~]{3,}\\s*$",
+            "endCaptures": [
+                {
+                    "name": "markup.heading.weave.md"
+                }
+            ],
+            "contentName": "source.embedded.python",
+            "patterns": [
+                {
+                    "include": "source.python"
+                }
+            ]
+        },
+        {
+            "include": "source.gfm"
+        },
+        {
+            "include": "text.md"
+        }
+    ]
+}
