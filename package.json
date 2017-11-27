@@ -2,7 +2,7 @@
     "name": "language-weave",
     "displayName": "language-weave",
     "description": "Language support for pweave",
-    "version": "0.0.1",
+    "version": "0.1.0",
     "publisher": "jameselderfield",
     "engines": {
         "vscode": "^1.17.0"
@@ -11,71 +11,131 @@
         "Languages"
     ],
     "contributes": {
-        "languages": [{
+        "languages": [
+            {
                 "id": "pweave_md",
-                "extensions": [".pmd", ".pmdw"],
-                "configuration": "./language-configuration.json"
-            }, {
-                "id": "noweb_julia",
-                "configuration": "./language-configuration.json"
-            }, {
-                "id": "noweb_python",
-                "configuration": "./language-configuration.json"
-            }, {
+                "aliases": [
+                    "Pweave: markdown"
+                ],
+                "extensions": [
+                    ".pmd",
+                    ".pmdw"
+                ],
+                "configuration": "./configurations/md.json"
+            },
+            {
                 "id": "pweave_rst",
-                "configuration": "./language-configuration.json",
-                "extensions": [".prstw", ".rstw"]
-            }, {
+                "aliases": [
+                    "Pweave: reStructuredText"
+                ],
+                "extensions": [
+                    ".prstw",
+                    ".rstw"
+                ],
+                "configuration": "./configurations/rst.json"
+            },
+            {
                 "id": "pweave_tex",
-                "configuration": "./language-configuration.json",
-                "extensions": [".ptexw", ".pnw"]
-            }, {
+                "aliases": [
+                    "Pweave: LaTex"
+                ],
+                "extensions": [
+                    ".ptexw",
+                    ".pnw"
+                ],
+                "configuration": "./configurations/tex.json"
+            },
+            {
                 "id": "weave_md",
-                "configuration": "./language-configuration.json",
-                "extensions": [".jmd", ".jmdw", ".mdw"]
-            }, {
+                "aliases": [
+                    "Weave.jl: markdown"
+                ],
+                "extensions": [
+                    ".jmd",
+                    ".jmdw",
+                    ".mdw"
+                ],
+                "configuration": "./configurations/md.json"
+            },
+            {
                 "id": "weave_rst",
-                "configuration": "./language-configuration.json",
-                "extensions": [".jrstw"]
-            }, {
+                "aliases": [
+                    "Weave.jl: reStructuredText"
+                ],
+                "extensions": [
+                    ".jrstw"
+                ],
+                "configuration": "./configurations/rst.json"
+            },
+            {
                 "id": "weave_tex",
-                "configuration": "./language-configuration.json",
-                "extensions": [".texw", ".jtexw", ".jnw"]
+                "aliases": [
+                    "Weave.jl: LaTex"
+                ],
+                "extensions": [
+                    ".texw",
+                    ".jtexw",
+                    ".jnw"
+                ],
+                "configuration": "./configurations/md.json"
             }
         ],
-        "grammars": [{
-            "language": "noweb_julia",
-            "scopeName": "source.weave.noweb",
-            "path": "./syntaxes/noweb_julia.json"
-        }, {
-            "language": "noweb_python",
-            "scopeName": "source.pweave.noweb",
-            "path": "./syntaxes/noweb_python.json"
-        }, {
-            "language": "pweave_md",
-            "scopeName": "source.pweave.md",
-            "path": "./syntaxes/pweave_md.json"
-        }, {
-            "language": "pweave_rst",
-            "scopeName": "source.pweave.restructuredtext",
-            "path": "./syntaxes/pweave_rst.json"
-        }, {
-            "language": "pweave_tex",
-            "scopeName": "source.pweave.latex",
-            "path": "./syntaxes/pweave_tex.json"
-        }, {
-            "language": "weave_md",
-            "scopeName": "source.weave.md",
-            "path": "./syntaxes/weave_md.json"
-        }, {
-            "language": "weave_rst",
-            "scopeName": "source.weave.restructuredtext",
-            "path": "./syntaxes/weave_rst.json"
-        }, {
-            "language": "weave_tex",
-            "scopeName": "source.weave.latex",
-            "path": "./syntaxes/weave_tex.json"
-        }]
+        "grammars": [
+            {
+                "scopeName": "source.weave.noweb",
+                "path": "./syntaxes/noweb_julia.json",
+                "injectTo": [
+                    "source.weave.md",
+                    "source.weave.rst",
+                    "source.weave.tex"
+                ],
+                "embeddedLanguages": {
+                    "source.embedded.julia": "julia"
+                }
+            },
+            {
+                "scopeName": "source.pweave.noweb",
+                "path": "./syntaxes/noweb_python.json",
+                "injectTo": [
+                    "source.pweave.md",
+                    "source.pweave.rst",
+                    "source.pweave.tex"
+                ],
+                "embeddedLanguages": {
+                    "source.embedded.python": "python"
+                }
+            },
+            {
+                "language": "pweave_md",
+                "scopeName": "source.pweave.md",
+                "path": "./syntaxes/pweave_md.json"
+            },
+            {
+                "language": "pweave_rst",
+                "scopeName": "source.pweave.restructuredtext",
+                "path": "./syntaxes/pweave_rst.json"
+            },
+            {
+                "language": "pweave_tex",
+                "scopeName": "source.pweave.latex",
+                "path": "./syntaxes/pweave_tex.json"
+            },
+            {
+                "language": "weave_md",
+                "scopeName": "source.weave.md",
+                "path": "./syntaxes/weave_md.json"
+            },
+            {
+                "language": "weave_rst",
+                "scopeName": "source.weave.restructuredtext",
+                "path": "./syntaxes/weave_rst.json"
+            },
+            {
+                "language": "weave_tex",
+                "scopeName": "source.weave.latex",
+                "path": "./syntaxes/weave_tex.json"
+            }
+        ]
     },
     "extensionDependencies": [
         "lextudio.restructuredtext",
