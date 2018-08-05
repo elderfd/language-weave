@@ -41,6 +41,26 @@
             ]
         },
         {
+            "begin": "\\<\\%=?",
+            "beginCaptures": {
+                "0": {
+                    "name": "markup.bold.weave.md"
+                }
+            },
+            "end": "\\%\\>",
+            "endCaptures": {
+                "0": {
+                    "name": "markup.bold.weave.md"
+                }
+            },
+            "contentName": "source.embedded.python",
+            "patterns": [
+                {
+                    "include": "source.python"
+                }
+            ]
+        },
+        {
             "include": "text.html.markdown"
         }
     ]
