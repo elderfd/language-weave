@@ -2,7 +2,7 @@
     "name": "language-weave",
     "displayName": "language-weave",
     "description": "Language support for pweave",
-    "version": "0.3.0",
+    "version": "0.4.0",
     "publisher": "jameselderfield",
     "engines": {
         "vscode": "^1.17.0"
